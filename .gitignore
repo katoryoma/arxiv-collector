@@ -1,0 +1,46 @@
+# 論文収集の成果物
+*.csv
+paper_box/
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+go.work
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+*.py[cod]
+*$py.class
+build/
+dist/
+wheels/
+*.egg-info
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv
+.env
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
