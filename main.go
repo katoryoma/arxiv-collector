@@ -51,13 +51,13 @@ func main() {
 		start := time.Now()
 
 		// ユーザーからキーワード入力を受け取る（複数単語対応）
-		fmt.Println("検索したいキーワードを入力してね♡ (複数単語可):")
+		fmt.Println("検索したいキーワードを入力してね (複数単語可):")
 		reader := bufio.NewReader(os.Stdin)
 		input, _ := reader.ReadString('\n')
 		input = strings.TrimSpace(input) // 改行とスペースをトリム
 
 		// 論文数の入力
-		fmt.Println("いくつみつけてほしいのかしら？多すぎはだめよ？100までにして、ね？:")
+		fmt.Println("いくつみつけてほしいの？100までにしてね！:")
 		maxResultsStr, _ := reader.ReadString('\n')
 		maxResultsStr = strings.TrimSpace(maxResultsStr)
 		maxResults := 100
@@ -66,7 +66,7 @@ func main() {
 		}
 
 		// 年数の入力（オプション）は廃止 - arXIvの仕様上、正確な年度フィルタリングが難しいため
-		fmt.Println("⚠️  年度フィルタリングは非対応です。最新の論文を取得します♡")
+		fmt.Println("⚠️  年度フィルタリングは非対応です。最新の論文を取得します")
 
 		// 入力されたキーワード（複数の場合はカンマ区切り）
 		keywords := []string{input}
@@ -78,7 +78,7 @@ func main() {
 		// WaitGroup: 並列処理の管理係。「全員終わるまで待つよ」というカウンター。
 		var wg sync.WaitGroup
 
-		fmt.Println("🚀 いっぱいあつめるからね？...")
+		fmt.Println("🚀 たくさん収集するね！")
 
 		// ■ 3. 並行処理の開始 (ここがGoの真骨頂！)
 		for _, kw := range keywords {
@@ -122,7 +122,7 @@ func main() {
 			}
 		}
 
-		fmt.Printf("✅ こんなにたくさん...。%d 件の論文を保存しといたわ (%s)///\n", count, filename)
+		fmt.Printf("✅ %d 件の論文を保存しといたわ (%s)///\n", count, filename)
 		fmt.Printf("⏱ 頑張った時間: %v\n", time.Since(start))
 
 		// 続けるかどうか確認
