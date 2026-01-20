@@ -122,7 +122,7 @@ func main() {
 			}
 		}
 
-		fmt.Printf("✅ %d 件の論文を保存しといたわ (%s)///\n", count, filename)
+		fmt.Printf("✅ %d 件の論文を保存しといたよ (%s)///\n", count, filename)
 		fmt.Printf("⏱ 頑張った時間: %v\n", time.Since(start))
 
 		// 続けるかどうか確認
@@ -131,7 +131,7 @@ func main() {
 		continueStr, _ := reader.ReadString('\n')
 		continueStr = strings.TrimSpace(continueStr)
 		if continueStr != "y" && continueStr != "Y" {
-			fmt.Println("✨ すぐきてね？	バイバイ♡")
+			fmt.Println("✨ またきてね！")
 			break
 		}
 	}
